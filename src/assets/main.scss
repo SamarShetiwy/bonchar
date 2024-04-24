@@ -3,8 +3,8 @@
 @tailwind utilities;
 @import './style.scss';
 
-$bgColorb :$bgColor;
+$bgColor :$bgColor;
 
 body{
-    background-color: $bgColorb;
+    background-color: $bgColor;
 }
