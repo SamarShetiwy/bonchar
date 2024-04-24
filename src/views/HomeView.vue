@@ -4,8 +4,8 @@
 </script>
 
 <template>
-  
-   <header class=" relative container header  mx-auto *:header grid grid-cols-4  w-100 h-80 mt-10  ">
+  <div></div>
+   <!-- <header class=" relative container header  mx-auto *:header grid grid-cols-4  w-100 h-80 mt-10  ">
     <div class="flex">
       <i class="fa-solid fa-caret-left"></i>
       <div>
@@ -19,10 +19,10 @@
     </div>
     <i class="fa-solid fa-caret-right"></i>
    </div>
-  </header>
+  </header> -->
 
  
-  <div class=" container absolute  mx-auto px-40 grid sm:grid-cols-1 lg:grid-cols-3 ">
+  <!-- <div class=" container absolute  mx-auto px-40 grid sm:grid-cols-1 lg:grid-cols-3 ">
 
     <div class=" grid1 w-96 h-2/3  p-4">
       <h2 class="text-lg font-semibold">iPhone 6</h2>
@@ -51,32 +51,11 @@
     </div>
     </div>
     
-  </div>
+  </div> -->
 </template>
 
 
 
-<style lang="scss">
-$font-family : 'Proxima Nova Regular', sans-serif;
-.header {
-  background: linear-gradient(to right, #8F65FF 0%, #FF4858 100%);
-  
-}
-.grid{
-     
-
-    .grid1{
-      background-color: #FF6875;
-    }
-    .grid2{
-      background-color:antiquewhite;
-
-    }
-    .grid3{
-      background-color: #707070;
-    }
-
-  }
-
+<style >
 
 </style>

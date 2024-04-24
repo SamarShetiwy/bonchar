@@ -3,8 +3,9 @@ import { RouterView } from 'vue-router'
 import Navigation from './components/Navigation.vue';
 import HomeView from './views/HomeView.vue';
 
-
 </script>
+
+
 
 <template>
  

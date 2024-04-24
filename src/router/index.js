@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import about from '../views/about.vue'
+import MegaMenu from '../views/MegaMenu.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,9 +11,9 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/about',
-      name: 'about',
-      component: about
+      path: '/mega-menu',
+      name: 'MegaMenu',
+      component: MegaMenu
     },
     
   ]
