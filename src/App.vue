@@ -12,7 +12,6 @@ import HomeView from './views/HomeView.vue';
 <!-- <div class="container"> -->
  
   <Navigation />
-  <v-btn color="primary">Click me</v-btn>
   
   <!-- <HomeView /> -->
   <RouterView />

@@ -1,5 +1,6 @@
 <template>
-  <div class="flex absolute top-44 w-[60rem] left-1/2 -translate-x-1/2 justify-between gap-x-11 py-4 px-6 rounded border">
+  <div class=" hidden   :style= '{ display: showDivComputed } '
+  flex absolute top-44 w-[60rem] left-1/2 -translate-x-1/2 justify-between gap-x-11 py-4 px-6 rounded border">
     <div class="flex flex-col gap-y-5">
         <div class="text-[#C1C8CE] mx-2 font-semibold">Category</div>
         <div>Airport & Wireless</div>
@@ -34,13 +35,25 @@
   </div>
 </template>
 
-<script setup>
+
+
+ <script setup>
+
+import { defineProps ,computed } from 'vue';
+
 const props = defineProps({
-    show: Boolean
-})
+  showDiv: {
+    type: Boolean,
+    default: true
+  }
+});
+
+const showDivComputed = computed(() => {
+return props.showDiv ? 'block' : 'none';
+});
+console.log(showDivComputed)
 
 </script>
-
 <style>
 
 </style>

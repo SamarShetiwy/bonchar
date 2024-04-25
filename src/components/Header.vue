@@ -29,51 +29,42 @@
     </div>
   </div>
 
-  <!-- Nav -->
 
-  <nav class="mt-8">
-    <div class="container flex items-center justify-center flex-col gap-y-4">
-      <h1 class="text-[#FF4252] font-bold text-2xl text-shadow-2xl tracking-widest">BOUNCER</h1>
-       <div >{{ content }}</div>
-      <ul class="flex gap-x-11">
-        <home-drop-down/>
-        <li @click="toggleDiv" :class="{'text-[#33A0FF]': isOpen} ">HOME</li>
-        <li>STORE</li>
-        <li>IPHONE</li>
-        <li>IPAD</li>
-        <li>MACBOOK</li>
-        <li>ACCESSORIES</li>
-      </ul>
-    </div>
 
-  </nav>
+<!-- Nav -->
 
-  </template>
-  
-  <script>
+<nav class="mt-8 hidden justify-center sm:flex">
+  <div class="container flex items-center justify-center flex-col gap-y-4">
+    <h1 class="text-[#FF4252] font-bold text-2xl text-shadow-2xl tracking-widest">BOUNCER</h1>
+    
+    <HomeDropDown />
+
+    <ul class="flex gap-x-8 md:gap-x-11 w-full sm:w-auto">
+      <li @click="toggleDiv" :class="{'text-[#33A0FF]': isOpen } ">HOME</li>
+      <li>STORE</li>
+      <li>IPHONE</li>
+      <li>IPAD</li>
+      <li>MACBOOK</li>
+      <li>ACCESSORIES</li>
+    </ul>
+  </div>
+</nav>
+
+</template>
+
+<script setup>
+import { ref } from 'vue';
 import HomeDropDown from './HomeDropDown.vue';
 
-    export default {
-  components:{
-       name : 'HomeDropDown',
-       props :['content']
-   },
-      data() {
-        return {
-          isOpen: false
-        };
-      },
-      methods: {
-        toggleDiv() {
-          this.isOpen = !this.isOpen;
-          
+const isOpen = ref(false);
+const toggleDiv = ()=>{
+  isOpen.value =!isOpen.value;
+  console.log(isOpen.value);
+};
+</script>
 
-          console.log(this.isOpen)
-        }
-      },
-    };
 
-  </script>
+
   
   <style>
   </style>
