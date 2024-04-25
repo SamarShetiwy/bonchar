@@ -1,8 +1,8 @@
-<template class="{}">
-
+.<template>
+  
 </template>
 
-<script setup>
+<script>
 
 </script>
 

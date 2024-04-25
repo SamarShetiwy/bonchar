@@ -32,9 +32,10 @@
 
 
 <!-- Nav -->
+<!-- :class='{'display':isSmallScreen}' -->
 
-<nav class="mt-8 hidden justify-center sm:flex">
-  <div class="container flex items-center justify-center flex-col gap-y-4">
+<nav class="mt-8  justify-center sm:flex ">
+ <div class="container flex items-center justify-center flex-col gap-y-4">
     <h1 class="text-[#FF4252] font-bold text-2xl text-shadow-2xl tracking-widest">BOUNCER</h1>
     
     <HomeDropDown />
@@ -53,19 +54,44 @@
 </template>
 
 <script setup>
+
+
 import { ref } from 'vue';
+
 import HomeDropDown from './HomeDropDown.vue';
 
+
 const isOpen = ref(false);
+
+const isSmallScreen = ref(false);
+
+
 const toggleDiv = ()=>{
+
   isOpen.value =!isOpen.value;
+
   console.log(isOpen.value);
+
 };
+
+
+// add an event listener to detect screen size changes
+
+window.addEventListener('resize', () => {
+
+  if (window.innerWidth < 640) { // adjust the breakpoint as needed
+
+    isSmallScreen.value = true;
+
+  } else {
+
+    isSmallScreen.value = false;
+
+  }
+
+});
+
 </script>
 
 
-
-  
-  <style>
-  </style>
   

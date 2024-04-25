@@ -1,8 +1,9 @@
 
 
 <template>
+
   <div class=" h-[25rem] bg-gradient-to-r from-[#8F65FF] to-[#FF4858] mt-10 flex flex-col justify-center items-center">
-    <!-- <div class="w-[100%] bg-yellow-700">
+    <div class="w-[100%] bg-yellow-700">
       <swiper
         :modules="modules"
         :slides-per-view="3"
@@ -19,7 +20,7 @@
       
         ...
       </swiper>
-    </div> -->
+    </div>
 
   </div>
 
@@ -77,151 +78,53 @@
     </ul>
 
     <div class="grid lg:grid-cols-4 md:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-4 mt-7">
-      <div class="border p-3 flex flex-col items-center gap-y-7">
-        <img src="../assets/image/50061505_575246.png"/>
-        <div class="flex flex-col items-center gap-y-3">
-          <h1>Title</h1>
-          <div class="flex flex-col gap-y-2">
-            <img src="../assets/image/rate.png"/>
-            <div class="flex gap-x-3">
-              <span class="text-[#FF4858]">$399</span>
-              <span class="text-[#5D656B] line-through">$399</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="border p-3 flex flex-col items-center gap-y-7">
-        <img src="../assets/image/50061505_575246.png"/>
-        <div class="flex flex-col items-center gap-y-3">
-          <h1>Title</h1>
-          <div class="flex flex-col gap-y-2">
-            <img src="../assets/image/rate.png"/>
-            <div class="flex gap-x-3">
-              <span class="text-[#FF4858]">$399</span>
-              <span>$399</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="border p-3 flex flex-col items-center gap-y-7">
-        <img src="../assets/image/50061505_575246.png"/>
-        <div class="flex flex-col items-center gap-y-3">
-          <h1>Title</h1>
-          <div class="flex flex-col gap-y-2">
-            <img src="../assets/image/rate.png"/>
-            <div class="flex gap-x-3">
-              <span class="text-[#FF4858]">$399</span>
-              <span>$399</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="border p-3 flex flex-col items-center gap-y-7">
-        <img src="../assets/image/50061505_575246.png"/>
-        <div class="flex flex-col items-center gap-y-3">
-          <h1>Title</h1>
-          <div class="flex flex-col gap-y-2">
-            <img src="../assets/image/rate.png"/>
-            <div class="flex gap-x-3">
-              <span class="text-[#FF4858]">$399</span>
-              <span>$399</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="border p-3 flex flex-col items-center gap-y-7">
-        <img src="../assets/image/50061505_575246.png"/>
-        <div class="flex flex-col items-center gap-y-3">
-          <h1>Title</h1>
-          <div class="flex flex-col gap-y-2">
-            <img src="../assets/image/rate.png"/>
-            <div class="flex gap-x-3">
-              <span class="text-[#FF4858]">$399</span>
-              <span>$399</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="border p-3 flex flex-col items-center gap-y-7">
-        <img src="../assets/image/50061505_575246.png"/>
-        <div class="flex flex-col items-center gap-y-3">
-          <h1>Title</h1>
-          <div class="flex flex-col gap-y-2">
-            <img src="../assets/image/rate.png"/>
-            <div class="flex gap-x-3">
-              <span class="text-[#FF4858]">$399</span>
-              <span>$399</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="border p-3 flex flex-col items-center gap-y-7">
-        <img src="../assets/image/50061505_575246.png"/>
-        <div class="flex flex-col items-center gap-y-3">
-          <h1>Title</h1>
-          <div class="flex flex-col gap-y-2">
-            <img src="../assets/image/rate.png"/>
-            <div class="flex gap-x-3">
-              <span class="text-[#FF4858]">$399</span>
-              <span>$399</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="border p-3 flex flex-col items-center gap-y-7">
-        <img src="../assets/image/50061505_575246.png"/>
-        <div class="flex flex-col items-center gap-y-3">
-          <h1>Title</h1>
-          <div class="flex flex-col gap-y-2">
-            <img src="../assets/image/rate.png"/>
-            <div class="flex gap-x-3">
-              <span class="text-[#FF4858]">$399</span>
-              <span>$399</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <grid />
+      <grid />
+      <grid />
+      <grid />
+      <grid />
+      <grid />
+      <grid />
+      <grid />
+      <grid />
     </div>
   </div>
 </div>
 
 </template>
 
-<script>
+<script setup>
   import grid from '../components/grid.vue'
-  // import Swiper core and required modules
-  import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
-  // Import Swiper Vue.js components
-  import { Swiper, SwiperSlide } from 'swiper/vue';
-
-  // Import Swiper styles
-  import 'swiper/css';
-  import 'swiper/css/navigation';
-  import 'swiper/css/pagination';
-  import 'swiper/css/scrollbar';
-
-  // Import Swiper styles
-  export default {
-    components: {
-      Swiper,
-      SwiperSlide,
-    },
-    setup() {
-      const onSwiper = (swiper) => {
-        console.log(swiper);
-      };
-      const onSlideChange = () => {
-        console.log('slide change');
-      };
-      return {
-        onSwiper,
-        onSlideChange,
-        modules: [Navigation, Pagination, Scrollbar, A11y],
-      };
-    },
-  };
+  // // Import Swiper core and required modules
+  // import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+  
+  // // Import Swiper Vue.js components
+  // import { Swiper, SwiperSlide } from 'swiper/vue';
+  
+  // // Import Swiper Sass
+  // import 'swiper/swiper.sass';
+  // import 'swiper/components/navigation/navigation.sass';
+  // import 'swiper/components/pagination/pagination.sass';
+  // import 'swiper/components/scrollbar/scrollbar.sass';
+  
+  // const onSwiper = (swiper) => {
+  //   console.log(swiper);
+  // };
+  // const onSlideChange = () => {
+  //   console.log('slide change');
+  // };
+  
+  // // Return props, context, and initial reactive bindings
+  // return {
+  //   onSwiper,
+  //   onSlideChange,
+  //   modules: [Navigation, Pagination, Scrollbar, A11y]
+  // };
 </script>
+
+
+
 
 
 
