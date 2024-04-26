@@ -12,7 +12,7 @@ import HomeView from './views/HomeView.vue';
 <!-- <div class="container"> -->
  
   <Navigation />
-  <HomeView />
+ 
   <RouterView />
 <!-- </div> -->
 </template>

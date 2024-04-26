@@ -40,7 +40,7 @@
     
     <HomeDropDown />
 
-    <ul class="flex gap-x-8 md:gap-x-11 w-full sm:w-auto">
+    <ul class="sm:flex gap-x-8 md:gap-x-11 w-full sm:w-auto hidden">
       <li @click="toggleDiv" :class="{'text-[#33A0FF]': isOpen } ">HOME</li>
       <li>STORE</li>
       <li>IPHONE</li>
@@ -57,39 +57,26 @@
 
 
 import { ref } from 'vue';
-
 import HomeDropDown from './HomeDropDown.vue';
 
 
 const isOpen = ref(false);
-
 const isSmallScreen = ref(false);
 
-
 const toggleDiv = ()=>{
-
   isOpen.value =!isOpen.value;
-
   console.log(isOpen.value);
-
 };
-
-
 // add an event listener to detect screen size changes
+// window.addEventListener('resize', () => {
+//   if (window.innerWidth < 640) { // adjust the breakpoint as needed
+//     isSmallScreen.value = true;
+//   } else {
+//     isSmallScreen.value = false;
+//   }
+// });
 
-window.addEventListener('resize', () => {
 
-  if (window.innerWidth < 640) { // adjust the breakpoint as needed
-
-    isSmallScreen.value = true;
-
-  } else {
-
-    isSmallScreen.value = false;
-
-  }
-
-});
 
 </script>
 
