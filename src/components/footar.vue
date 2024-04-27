@@ -9,7 +9,7 @@
       </div>
       <div class="flex flex-col md:gap-y-6 gap-y-3">
         <h2 class="font-semibold">Follow us</h2>
-        <p>lorem lorem lorem lorem lorem lorem lorem lorem </p>
+        <p>Since the 1500s, when an unknown printer took a galley of type and scrambled. </p>
         <div class="flex gap-x-6">
           <i class="pi pi-facebook text-2xl text-[#385C8E]"></i>
           <i class="pi pi-twitter text-2xl text-black"></i>
@@ -27,9 +27,9 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-5 px-10 gap-y-10">
+    <div class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-6 px-10 gap-y-10">
 
-      <div class="flex flex-col gap-y-3">
+      <div class="flex flex-col gap-y-4">
         <h1 class="font-semibold">Information</h1>
         <ul class="flex flex-col gap-y-1">
           <li>About us</li>
@@ -38,8 +38,8 @@
           <li>Terms & Conditions</li>
         </ul>
       </div>
-      <div class="flex flex-col gap-y-3">
-        <h1 class="font-semibold">Information</h1>
+      <div class="flex flex-col gap-y-4">
+        <h1 class="font-semibold">Service</h1>
         <ul class="flex flex-col gap-y-1">
           <li>About us</li>
           <li>Information</li>
@@ -47,8 +47,8 @@
           <li>Terms & Conditions</li>
         </ul>
       </div>
-      <div class="flex flex-col gap-y-3">
-        <h1 class="font-semibold">Information</h1>
+      <div class="flex flex-col gap-y-4">
+        <h1 class="font-semibold">Extras</h1>
         <ul class="flex flex-col gap-y-1">
           <li>About us</li>
           <li>Information</li>
@@ -56,8 +56,8 @@
           <li>Terms & Conditions</li>
         </ul>
       </div>
-      <div class="flex flex-col gap-y-3">
-        <h1 class="font-semibold">Information</h1>
+      <div class="flex flex-col gap-y-4">
+        <h1 class="font-semibold">My Account</h1>
         <ul class="flex flex-col gap-y-1">
           <li>About us</li>
           <li>Information</li>
@@ -65,8 +65,8 @@
           <li>Terms & Conditions</li>
         </ul>
       </div>
-      <div class="flex flex-col gap-y-3">
-        <h1 class="font-semibold">Information</h1>
+      <div class="flex flex-col gap-y-4">
+        <h1 class="font-semibold">Userful Links</h1>
         <ul class="flex flex-col gap-y-1">
           <li>About us</li>
           <li>Information</li>
@@ -74,6 +74,16 @@
           <li>Terms & Conditions</li>
         </ul>
       </div>
+      <div class="flex flex-col gap-y-4">
+        <h1 class="font-semibold"> Our Offers</h1>
+        <ul class="flex flex-col gap-y-1">
+          <li>About us</li>
+          <li>Information</li>
+          <li>Privacy Policy</li>
+          <li>Terms & Conditions</li>
+        </ul>
+      </div>
+   
 
     </div>
   </div>

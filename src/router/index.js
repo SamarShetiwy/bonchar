@@ -1,27 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import MegaMenu from '../views/MegaMenu.vue'
-import Popup from '../views/popup.vue'
+import product from '../views/product.vue'
+import card from '../views/card.vue'
+
 
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: HomeView
-    },
-    {
-      path: '/mega-menu',
-      name: 'MegaMenu',
-      component: HomeView
+      path: '/product',
+      name: 'product',
+      component: product
     },
     {
       path: '/',
-      name: 'popup',
-      component: HomeView
+      name: 'card',
+      component: card
     }
+   
     
   ]
 })

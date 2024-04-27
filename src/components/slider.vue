@@ -1,52 +1,42 @@
 <template>
-   <!-- <div class="w-[100%] bg-yellow-700">
-      <swiper
-        :modules="modules"
-        :slides-per-view="3"
-        :space-between="50"
-        navigation
-        :pagination="{ clickable: true }"
-        :scrollbar="{ draggable: true }"
-        @swiper="onSwiper"
-        @slideChange="onSlideChange"
-      >
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 1</swiper-slide>
-      
-        ...
-      </swiper>
-    </div> -->
+  <div class="relative">
+  <div class="slider-container overflow-hidden">
+    <div class="slider flex">
+     
+      <div class="slide flex-shrink-0 w-full">Slide 1</div>
+      <div class="slide flex-shrink-0 w-full">Slide 2</div>
+      <div class="slide flex-shrink-0 w-full">Slide 3</div>
+    </div>
+  </div>
+  <button class="left-arrow absolute top-1/2 transform -translate-y-1/2 left-4  px-3 py-2 rounded-full">&#10094;</button>
+  <button class="right-arrow absolute top-1/2 transform -translate-y-1/2 right-4 px-3 py-2 rounded-full">&#10095;</button>
+</div>
+ 
 </template>
 
-<script setup>
+<script>
+const slider = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slide');
+let index = 0;
 
+function slideLeft() {
+  index = (index - 1 + slides.length) % slides.length;
+  updateSlider();
+}
 
-//   // Import Swiper core and required modules
-//   import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-  
-//   // Import Swiper Vue.js components
-//   import { Swiper, SwiperSlide } from 'swiper/vue';
-  
-//   // Import Swiper Sass
-//   import 'swiper/swiper.sass';
-//   import 'swiper/components/navigation/navigation.sass';
-//   import 'swiper/components/pagination/pagination.sass';
-//   import 'swiper/components/scrollbar/scrollbar.sass';
-  
-//   const onSwiper = (swiper) => {
-//     console.log(swiper);
-//   };
-//   const onSlideChange = () => {
-//     console.log('slide change');
-//   };
-  
-//   // Return props, context, and initial reactive bindings
-//   return {
-//     onSwiper,
-//     onSlideChange,
-//     modules: [Navigation, Pagination, Scrollbar, A11y]
-//   };
+function slideRight() {
+  index = (index + 1) % slides.length;
+  updateSlider();
+}
+
+function updateSlider() {
+  const slideWidth = slides[0].clientWidth;
+  slider.style.transform = `translateX(${-slideWidth * index}px)`;
+}
+
+document.querySelector('.left-arrow').addEventListener('click', slideLeft);
+document.querySelector('.right-arrow').addEventListener('click', slideRight);
+
 </script>
 
 <style>

@@ -2,6 +2,8 @@
 
 <template>
 
+  <Header/>
+
   <div class=" h-[30rem] bg-gradient-to-r from-[#8F65FF] to-[#FF4858] mt-10 flex flex-col justify-center items-center">
    
    <slider/>
@@ -61,9 +63,11 @@
       <li>Accessories</li>
     </ul>
 
-    <div id="products-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      <grid />
-    </div>
+  <div id="products-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-7">
+
+  <productCard v-for="product in products" :key="product.id" :product="product" />
+
+</div>
     <a  class="text-xl font-semibold mt-20 flex justify-center text-[#33A0FF]  uppercase underline  " href="">load more</a>
   </div>
   
@@ -183,9 +187,25 @@
 </template>
 
 <script setup>
-  import grid from '../components/grid.vue';
+  import Header from '../components/Header.vue';
+  import productCard from '../components/productCard.vue';
   import slider from '../components/slider.vue';
-  import footar from '@/components/footar.vue';
+  import footar from '../components/footar.vue';
+import { ref } from 'vue';
+
+const products = ref([]);
+  async function getProducts() {
+  try {
+    const response = await fetch('https://fakestoreapi.com/products');
+    const data = await response.json();
+    products.value = data;
+    console.log(products.value);
+  } catch (error) {
+    console.error(error);
+  }
+}
+getProducts() 
+
 
 </script>
 
