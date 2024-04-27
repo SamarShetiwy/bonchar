@@ -18,10 +18,10 @@
       <div class="flex flex-col md:gap-y-6 gap-y-3">
         <h2 class="font-semibold">Contact us</h2>
         <div>
-          <div>My company: blahblahblah</div>
-          <div>sad4654</div>
+          <div>My Company , 4578 Marmora Road, Glasgow</div>
+          <div>D04 89GRCall</div>
           <div>Call us now: 0123-456-789</div>
-          <div>Email: example@example.com</div>
+          <div>Email: support@whatever.com</div>
         </div>
 
       </div>

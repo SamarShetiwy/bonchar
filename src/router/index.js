@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import product from '../views/product.vue'
-import card from '../views/card.vue'
+import SingleProduct from '../views/SingleProduct.vue'
+import HomeView from '../views/HomeView.vue'
+
 
 
 
@@ -8,18 +9,19 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/product',
-      name: 'product',
-      component: product
+      path: '/',
+      name: 'HomeView',
+      component: HomeView
     },
     {
-      path: '/',
-      name: 'card',
-      component: card
+      path: '/product',
+      name: 'SingleProduct',
+      component: SingleProduct
     }
    
-    
   ]
 })
 
 export default router
+
+// slug

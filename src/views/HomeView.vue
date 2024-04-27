@@ -6,7 +6,7 @@
 
   <div class=" h-[30rem] bg-gradient-to-r from-[#8F65FF] to-[#FF4858] mt-10 flex flex-col justify-center items-center">
    
-   <slider/>
+    <slider/>
 
   </div>
 
@@ -182,24 +182,23 @@
   <button class="bg-[#2E90E5] text-[#ffffff] px-6">Search</button>
 </div>
 
-<footar/>
 
 </template>
 
 <script setup>
-  import Header from '../components/Header.vue';
+ 
   import productCard from '../components/productCard.vue';
   import slider from '../components/slider.vue';
-  import footar from '../components/footar.vue';
-import { ref } from 'vue';
+  import { ref } from 'vue';
 
 const products = ref([]);
-  async function getProducts() {
+  async function getProducts(){
   try {
     const response = await fetch('https://fakestoreapi.com/products');
     const data = await response.json();
     products.value = data;
     console.log(products.value);
+    console.log(products.id);
   } catch (error) {
     console.error(error);
   }

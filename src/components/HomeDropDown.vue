@@ -41,14 +41,7 @@
 
 <script setup>
 
-import HomeDropDown from './HomeDropDown.vue';
 
-
-let showComponent = false;
-
-function toggleComponent() {
-  showComponent = !showComponent;
-}
 </script>
 
 

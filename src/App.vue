@@ -1,7 +1,10 @@
 <script setup>
-import { RouterView } from 'vue-router'
+import { RouterView } from 'vue-router';
 import Header from './components/Header.vue';
 import HomeView from './views/HomeView.vue';
+import footar from './components/footar.vue';
+
+
 
 </script>
 
@@ -10,15 +13,19 @@ import HomeView from './views/HomeView.vue';
 <template>
  
 <!-- <div class="container"> -->
-
-  <HomeView />
+  <Header />
+  
   <RouterView />
+
+  <footar/>
+
 <!-- </div> -->
 </template>
 
 <style lang="scss">
 
 @import './assets/style.scss';
+
 
 </style>
 
