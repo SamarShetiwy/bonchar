@@ -31,17 +31,15 @@
 
 
 
-<!-- Nav -->
-<!-- :class='{'display':isSmallScreen}' -->
 
 <nav class="mt-8  justify-center sm:flex ">
  <div class="container flex items-center justify-center flex-col gap-y-4">
     <h1 class="text-[#FF4252] font-bold text-2xl text-shadow-2xl tracking-widest">BOUNCER</h1>
     
-    <HomeDropDown />
+    <HomeDropDown v-show="showDropdown" />
 
     <ul class="sm:flex gap-x-8 md:gap-x-11 w-full sm:w-auto hidden">
-      <li @click="toggleDiv" :class="{'text-[#33A0FF]': isOpen } ">HOME</li>
+      <li @click.prevent="toggleComponent" :class="{'text-[#33A0FF]': showDropdown }">HOME</li>    
       <li>STORE</li>
       <li>IPHONE</li>
       <li>IPAD</li>
@@ -50,6 +48,8 @@
     </ul>
   </div>
 </nav>
+
+
 
 </template>
 
@@ -60,23 +60,13 @@ import { ref } from 'vue';
 import HomeDropDown from './HomeDropDown.vue';
 
 
-const isOpen = ref(false);
-const isSmallScreen = ref(false);
+const showDropdown = ref(false);
 
-const toggleDiv = ()=>{
-  isOpen.value =!isOpen.value;
-  console.log(isOpen.value);
+const toggleComponent = ()=>{
+
+  showDropdown.value = !showDropdown.value;
+  console.log(showDropdown.value);
 };
-// add an event listener to detect screen size changes
-// window.addEventListener('resize', () => {
-//   if (window.innerWidth < 640) { // adjust the breakpoint as needed
-//     isSmallScreen.value = true;
-//   } else {
-//     isSmallScreen.value = false;
-//   }
-// });
-
-
 
 </script>
 
