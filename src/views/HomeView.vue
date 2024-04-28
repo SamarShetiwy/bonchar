@@ -10,7 +10,7 @@
 
   </div>
 
-<div class="flex justify-center sm:px-16 relative">
+<div class="flex justify-center sm:px-16 relative z-10">
   <div class="xs:w-[54rem] w-full flex sm:flex-row items-center flex-col container justify-center absolute -top-10 !bg-transparent">
     <div class="w-1/2 sm:w-1/3 bg-[#FF6875] text-[#FFFFFF] h-[10rem] relative p-4">
       <div class="max-w-[8rem] gap-y-2 flex flex-col">
