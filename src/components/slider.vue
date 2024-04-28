@@ -1,21 +1,30 @@
 <template>
-  <div class="relative">
-  <div class="slider-container overflow-hidden">
-    <div class="slider flex">
-     
-      <div class="slide flex-shrink-0 w-full">Slide 1</div>
-      <div class="slide flex-shrink-0 w-full">Slide 2</div>
-      <div class="slide flex-shrink-0 w-full">Slide 3</div>
-    </div>
-  </div>
-  <button class="left-arrow absolute top-1/2 transform -translate-y-1/2 left-4  px-3 py-2 rounded-full">&#10094;</button>
-  <button class="right-arrow absolute top-1/2 transform -translate-y-1/2 right-4 px-3 py-2 rounded-full">&#10095;</button>
-</div>
+  <swiper :navigation="true" :modules="modules" class="mySwiper">
+                <swiper-slide>
+                  <div>
+                    <p>rbrtnbrnblkkrr</p>
+                    <img src="" alt="">
+                  </div>
 
+                </swiper-slide>
+                <swiper-slide>Slide 2</swiper-slide><swiper-slide>Slide 3</swiper-slide>
+                <swiper-slide>Slide 4</swiper-slide><swiper-slide>Slide 5</swiper-slide>
+              
+            </swiper>
 </template>
 
 
+<script setup>
 
+  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import 'swiper/css/navigation';
+  import { Navigation,Thumbs } from 'swiper/modules';
+// Import Swiper styles
+  import 'swiper/css';
+
+  const  modules = [Navigation, Thumbs];
+
+</script>
 <style>
 
 </style>

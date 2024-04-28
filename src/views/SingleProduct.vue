@@ -14,7 +14,7 @@
 
     <!-- Product section -->
     <div class="container sm:px-16 grid grid-cols-[7fr_2fr] mt-20">
-
+        <div class="[100%]">
         <div class="flex gap-x-10">
             <div class="w-[40%] flex flex-col gap-y-8">
                 <div class=" h-[20rem] flex items-center">
@@ -34,8 +34,79 @@
                         <img class="w-20 object-cover pb-5" src="../assets/image/151101_bbd_sodc_blk_06.png" alt="">
                     </span>
                 </div>
-            </div>
 
+           
+
+            </div>
+          
+
+            <!-- <swiper
+    :style="{
+      '--swiper-navigation-color': '#fff',
+      '--swiper-pagination-color': '#fff',
+    }"
+    :loop="true"
+    :spaceBetween="10"
+    :navigation="true"
+    :thumbs="{ swiper: thumbsSwiper.value }"
+    :modules="modules"
+    class="mySwiper2"
+  >
+    <swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-1.jpg" /></swiper-slide
+    ><swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-2.jpg" /></swiper-slide
+    ><swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-3.jpg" /></swiper-slide
+    ><swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-4.jpg" /></swiper-slide
+    ><swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-5.jpg" /></swiper-slide
+    ><swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-6.jpg" /></swiper-slide
+    ><swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-7.jpg" /></swiper-slide
+    ><swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-8.jpg" /></swiper-slide
+    ><swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-9.jpg" /></swiper-slide
+    ><swiper-slide
+      ><img src="https://swiperjs.com/demos/images/nature-10.jpg"
+    /></swiper-slide>
+  </swiper>
+  <swiper
+    @swiper="setThumbsSwiper"
+    :loop="true"
+    :spaceBetween="10"
+    :slidesPerView="4"
+    :freeMode="true"
+    :watchSlidesProgress="true"
+    :modules="modules"
+    class="mySwiper"
+  >
+    <swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-1.jpg" /></swiper-slide
+    ><swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-2.jpg" /></swiper-slide
+    ><swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-3.jpg" /></swiper-slide
+    ><swiper-slide
+      ><img
+        src="https://swiperjs.com/demos/images/nature-4.jpg" /></swiper-slide
+    >
+  </swiper> -->
 
             <!-- product details -->
             <div class="w-[60%]">
@@ -116,28 +187,168 @@
                             Share on Twitter
                         </button>
                     </div>
+
                 </div>
             </div>
+
+      </div>
+            
+                  <!-- reviews -->
+                  <!-- <div class="flex gap-52">
+                  <div class="  ">
+                <div class="mt-28 pl-10 flex gap-10 pb-10  ">
+                    <span class="text-[#2E90E5] border-b-4 border[#2E90E5] ">Product Infomation</span>
+                    <div class="flex  gap-2 ">
+                        <span>Reviews</span>
+                        <div class="h-2 w-2  mt-2.5 rounded bg-black"></div>
+                    </div>
+                    
+                    <span>Another tab</span>
+                </div>
+                <div class=" max-w-[90%] pl-10 ">
+                    <p class="tracking-wide  leading-normal">
+                        Nunc facilisis sagittis ullamcorper. Proin lectus ipsum,
+                         gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc.
+                          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper.
+                          Nulla luctus malesuada tincidunt. 
+                         Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, 
+                         posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.
+
+Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate,
+ tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
+ 
+                    </p>
+                </div>
+            </div> 
+            <div class="h-[80%] w-[270%] bg-slate-500 ">
+                
+            </div>
+      </div> -->
+
         </div>
+
+
+        <!-- Best Sellers -->
+
         <div>
     
             <h1>Best Sellers</h1>
 
-            <productCard/>
+            <ProductCard />
 
+        </div>
+        <div class="swiper">
+            <swiper :navigation="true" :modules="modules" class="mySwiper">
+                <swiper-slide>Slide 1</swiper-slide>
+                <swiper-slide>Slide 2</swiper-slide><swiper-slide>Slide 3</swiper-slide>
+                <swiper-slide>Slide 4</swiper-slide><swiper-slide>Slide 5</swiper-slide>
+                <swiper-slide>Slide 6</swiper-slide><swiper-slide>Slide 7</swiper-slide>
+                <swiper-slide>Slide 8</swiper-slide><swiper-slide>Slide 9</swiper-slide>
+            </swiper>
         </div>
 
     </div>
-
 </template>
 
 
 <script setup>
- 
-//  import productCard from '../components/productCard.vue';
+  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import 'swiper/css/navigation';
+  import { Navigation,Thumbs } from 'swiper/modules';
+// Import Swiper styles
+import 'swiper/css';
+import ProductCard from '../components/ProductCard.vue';
+// import { useRouter } from 'vue-router';
+import { useRoute } from 'vue-router'
+import { ref } from 'vue';
+const  modules = [Navigation, Thumbs];
+
+const route = useRoute();
+// console.log('>>>>>>>>>>>>>>>>>>>>', route.params.productId)
+
+//  const router = useRouter();
+ const products = ref({});
+ const id = route.params.productId; 
+
+ async function getSingleProducts(id){
+     try {
+    const response = await fetch('https://fakestoreapi.com/products/${id}');
+    const data = await response.json();
+    products.value = data;
+    // console.log('>>>>>>>>>>>>>>>prod', products.value);
+  } catch (error) {
+    console.error(error);
+  }
+}
+getSingleProducts(id);
+
+
+
+// import { Swiper, SwiperSlide } from 'swiper/vue';
+
+// import 'swiper/scss';
+// import 'swiper/scss/free-mode';
+// import 'swiper/scss/navigation';
+// import 'swiper/scss/thumbs';
+// import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+
+// const thumbsSwiper = ref(null);
+
+// const setThumbsSwiper = (swiper) => {
+//   thumbsSwiper.value = swiper;
+// };
 
 </script>
 
-<style>
+<style lang="scss">
+.swiper {
+  width: 100%;
+  height: 100%;
 
+  &-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.mySwiper2 {
+  height: 80%;
+  width: 100%;
+}
+
+.mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+
+  .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+
+    &-thumb-active {
+      opacity: 1;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
 </style>

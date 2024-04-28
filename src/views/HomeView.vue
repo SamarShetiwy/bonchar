@@ -65,7 +65,7 @@
 
   <div id="products-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-7">
 
-  <productCard v-for="product in products" :key="product.id" :product="product" />
+  <ProductCard v-for="product in products" :key="product.id" :product="product" />
 
 </div>
     <a  class="text-xl font-semibold mt-20 flex justify-center text-[#33A0FF]  uppercase underline  " href="">load more</a>
@@ -186,12 +186,12 @@
 </template>
 
 <script setup>
- 
-  import productCard from '../components/productCard.vue';
+  
+  import ProductCard from '../components/ProductCard.vue';
   import slider from '../components/slider.vue';
   import { ref } from 'vue';
 
-const products = ref([]);
+const products = ref({});
   async function getProducts(){
   try {
     const response = await fetch('https://fakestoreapi.com/products');
@@ -203,14 +203,13 @@ const products = ref([]);
     console.error(error);
   }
 }
-getProducts() 
+getProducts()
+
+
+
 
 
 </script>
-
-
-
-
 
 
 <style >
