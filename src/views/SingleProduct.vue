@@ -17,7 +17,11 @@
           <div class="flex flex-col gap-x-10">
 
             <div class="flex gap-x-5">
-              <div class="w-[40%] flex flex-col gap-y-8">
+
+              <!-- <SwiperProduct/> -->
+               <div class="w-[40%] flex flex-col gap-y-8">
+
+                
                   <div class=" h-[20rem] flex items-center">
                       <img class="w-full object-cover" src="../assets/image/Rectangle 6.png" alt="">
                   </div>
@@ -38,7 +42,7 @@
 
             
 
-              </div>
+              </div> 
             
 
               <!-- product details -->
@@ -150,7 +154,7 @@
     
       <h1>Best Sellers</h1>
 
-      <ProductCard />
+      <ProductCard :product="productData" />
 
         <div class="mt-10 bg-[#C1C8CE] px-5 py-8 flex flex-col gap-y-5">
           <h1 class="text-xl font-bold">Go Pro Hero 6</h1>
@@ -164,17 +168,30 @@
 
   <div>
     <swiper
-    :slidesPerView="4"
-    :spaceBetween="2"
+    :slidesPerView="1.7"
+    :spaceBetween="16"
     :pagination="{
       clickable: true,
     }"
     :modules="modules"
+    :breakpoints="{
+      '640': {
+        slidesPerView: 2.5,
+        spaceBetween: 16,
+      },
+      '768': {
+        slidesPerView: 3,
+        spaceBetween: 24,
+      },
+      '992': {
+        slidesPerView: 4,
+        spaceBetween: 24,
+      }
+    }"
     class="mySwiper"
   >
-  <swiper-slide v-for="i in 20 " :key="i">
-<ProductCard />
-</swiper-slide>
+  <swiper-slide v-for="i in 20 " :key="i" >
+    <ProductCard v-for="product in filteredProducts" :key="product.id" :product="product" /></swiper-slide>
    
   </swiper>
   </div>
@@ -186,8 +203,7 @@
 
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
-
-
+import SwiperProduct from '../components/SwiperProduct.vue';
   // Import Swiper styles
   import 'swiper/css';
 
@@ -200,28 +216,43 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import ProductCard from '../components/ProductCard.vue';
 import { useRoute } from 'vue-router'
-import { ref } from 'vue';
+import { ref,onMounted ,computed } from 'vue';
 
 
 const modules = [Pagination];
 const route = useRoute();
-// console.log('>>>>>>>>>>>>>>>>>>>>', route.params.productId)
+console.log('>>>>>>>>>>>>>>>>', route.params.productId)
 
 //  const router = useRouter();
- const products = ref({});
- const id = route.params.productId; 
+const productData = ref({});
 
- async function getSingleProducts(id){
-     try {
-    const response = await fetch('https://fakestoreapi.com/products/${id}');
+async function getSingleProduct(id) {
+  try {
+    const response = await fetch(`https://fakestoreapi.com/products/${id}`);
     const data = await response.json();
-    products.value = data;
-    // console.log('>>>>>>>>>>>>>>>prod', products.value);
+
+    productData.value = data;
+    filteredProducts();
+   
   } catch (error) {
     console.error(error);
   }
 }
-getSingleProducts(id);
+
+// const filteredProducts = computed(() => {
+// const ProductCategory = productData.value.category;
+//   return products.value.filter(product => product.category === "electronics");
+// });
+
+
+onMounted(() => {
+  const id = route.params.productId;
+  getSingleProduct(id);
+  
+});
+
+// filteredProducts = ref([]);
+// console.log('>>>>>>>>>>>>>>>>>>>>>>>', ProductCategory)
 
 </script>
 
