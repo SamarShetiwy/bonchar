@@ -166,7 +166,6 @@
         </div>
     </div>
 
-  <div class="mt-28 mr-28 ">
     <swiper 
     :slidesPerView="1.7"
     :spaceBetween="50"
@@ -184,19 +183,18 @@
         spaceBetween: 24,
       },
       '992': {
-        slidesPerView: 4,
+        slidesPerView: 23,
         spaceBetween: 24,
       }
     }"
     class="mySwiper "
   >
-  <swiper-slide>
+  <swiper-slide  >
       <!-- <ProductCard :product="productData"/> -->
       <ProductCard v-for="product in products" :key="product.id" :product="product " />
 </swiper-slide>
    
   </swiper>
-  </div>
 
 </template>
 
@@ -256,7 +254,7 @@ const fetchData = async () => {
   const productsResponse = await fetch(`https://fakestoreapi.com/products/category/${category}`);
   const products = await productsResponse.json();
   
-  return products.slice(0, 4);
+  return products.slice(0,10);
 };
 
 const useProducts = () => {
@@ -271,6 +269,8 @@ const useProducts = () => {
   };
 };
 const { products } = useProducts();
+
+
 
 
 
