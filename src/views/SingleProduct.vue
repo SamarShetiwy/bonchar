@@ -6,9 +6,9 @@
         <div class="text-[#C1C8CE]">
             <span class="text-[#33A0FF] mx-2">Home </span>
             /
-            <span class="text-[#33A0FF] mx-2">Accessories</span>
+            <span class="text-[#33A0FF] mx-2">{{ productData?.category }}</span>
             / 
-            <span class="text-[#22262A] mx-2">Beat Solo2 on Ear Headphone - Black</span>
+            <span class="text-[#22262A] mx-2">{{ productData?.title }}</span>
         </div>
     </div>
 
@@ -47,17 +47,17 @@
 
               <!-- product details -->
               <div class="w-[60%]">
-                  <p class="text-2xl">Beats Solo2 On Ear Headphones - Black</p>
+                  <p class="text-2xl">{{ productData?.title }} </p>
                   <div class="flex gap-x-5 mt-5 items-center">
                       <img class="h-fit" src="../assets/image/rate.png" alt="">
-                      <span class="text-[#C1C8CE]">0 Reviews</span>
+                      <span class="text-[#C1C8CE]">{{ productData?.rate }}</span>
                       <span class="text-[#33A0FF]">Submit a review</span>
                   </div>
 
                   <div class="border-t border-[#F6F7F8] mt-4">
                       <div class="flex gap-x-4 text-2xl">
-                          <span class="text-[#FF4858]">$499</span>
-                          <span class="text-[#C1C8CE] line-through">$599</span>
+                          <span class="text-[#FF4858]">{{ productData?.price }}</span>
+                          <span class="text-[#C1C8CE] line-through">{{ productData?.price }}</span>
                       </div>
 
                       <div class="mt-4 flex flex-col gap-y-2 border-b border-[#F6F7F8] pb-4">
@@ -166,10 +166,10 @@
         </div>
     </div>
 
-  <div>
-    <swiper
+  <div class="mt-28 mr-28 ">
+    <swiper 
     :slidesPerView="1.7"
-    :spaceBetween="16"
+    :spaceBetween="50"
     :pagination="{
       clickable: true,
     }"
@@ -188,10 +188,11 @@
         spaceBetween: 24,
       }
     }"
-    class="mySwiper"
+    class="mySwiper "
   >
-  <swiper-slide v-for="i in 4" :key="i"  class="gap-4">
-      <ProductCard :product="productData"/>
+  <swiper-slide>
+      <!-- <ProductCard :product="productData"/> -->
+      <ProductCard v-for="product in products" :key="product.id" :product="product " />
 </swiper-slide>
    
   </swiper>
@@ -205,7 +206,7 @@
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperProduct from '../components/SwiperProduct.vue';
-  // Import Swiper styles
+  //Import Swiper styles
   import 'swiper/css';
 
   import 'swiper/css/pagination';
@@ -217,14 +218,14 @@ import SwiperProduct from '../components/SwiperProduct.vue';
 
 import ProductCard from '../components/ProductCard.vue';
 import { useRoute } from 'vue-router'
-import { ref,onMounted} from 'vue';
+import { ref, onMounted } from 'vue';
 
 
 const modules = [Pagination];
 const route = useRoute();
 console.log('>>>>>>>>>>>>>>>>', route.params.productId)
 
-//  const router = useRouter();
+//const router = useRouter();
 const productData = ref({});
 
 async function getSingleProduct(id) {
@@ -233,6 +234,7 @@ async function getSingleProduct(id) {
     const data = await response.json();
 
     productData.value = data;
+    console.log(data);
    
   } catch (error) {
     console.error(error);
@@ -240,8 +242,39 @@ async function getSingleProduct(id) {
 }
 const id = route.params.productId;
 onMounted(() => {
+
   getSingleProduct(id);
+
 });
+
+
+const fetchData = async () => {
+  const response = await fetch('https://fakestoreapi.com/products/categories');
+  const categories = await response.json();
+  const category = categories[0];
+  console.log(category);
+  const productsResponse = await fetch(`https://fakestoreapi.com/products/category/${category}`);
+  const products = await productsResponse.json();
+  
+  return products.slice(0, 4);
+};
+
+const useProducts = () => {
+  const products = ref([]);
+
+  onMounted(async () => {
+    products.value = await fetchData();
+  });
+
+  return {
+    products
+  };
+};
+const { products } = useProducts();
+
+
+
+
 </script>
 
 
