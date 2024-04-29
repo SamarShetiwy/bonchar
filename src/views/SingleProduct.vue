@@ -190,8 +190,9 @@
     }"
     class="mySwiper"
   >
-  <swiper-slide v-for="i in 20 " :key="i" >
-    <ProductCard v-for="product in filteredProducts" :key="product.id" :product="product" /></swiper-slide>
+  <swiper-slide v-for="i in 4" :key="i"  class="gap-4">
+      <ProductCard :product="productData"/>
+</swiper-slide>
    
   </swiper>
   </div>
@@ -216,7 +217,7 @@ import SwiperProduct from '../components/SwiperProduct.vue';
 
 import ProductCard from '../components/ProductCard.vue';
 import { useRoute } from 'vue-router'
-import { ref,onMounted ,computed } from 'vue';
+import { ref,onMounted} from 'vue';
 
 
 const modules = [Pagination];
@@ -232,28 +233,15 @@ async function getSingleProduct(id) {
     const data = await response.json();
 
     productData.value = data;
-    filteredProducts();
    
   } catch (error) {
     console.error(error);
   }
 }
-
-// const filteredProducts = computed(() => {
-// const ProductCategory = productData.value.category;
-//   return products.value.filter(product => product.category === "electronics");
-// });
-
-
+const id = route.params.productId;
 onMounted(() => {
-  const id = route.params.productId;
   getSingleProduct(id);
-  
 });
-
-// filteredProducts = ref([]);
-// console.log('>>>>>>>>>>>>>>>>>>>>>>>', ProductCategory)
-
 </script>
 
 
