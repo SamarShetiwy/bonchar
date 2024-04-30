@@ -210,9 +210,9 @@ import SwiperProduct from '../components/SwiperProduct.vue';
   import '../assets/style.css';
   import { Pagination } from 'swiper/modules';
 
-cart
+// cart
   import {useCartStore} from '../stores/cartStore.js'
-  const data =useCartStore()
+  const data =useCartStore();
   console.log ('hhhhhhhhhhhhhhhhhhhhhhhh',data.products); 
 
 import ProductCard from '../components/ProductCard.vue';

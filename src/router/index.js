@@ -3,6 +3,8 @@ import SingleProduct from '../views/SingleProduct.vue'
 import Cart from '../views/Cart.vue'
 import HomeView from '../views/HomeView.vue'
 import ProductsList from '../views/ProductsList.vue'
+import Login from '../views/Login.vue'
+import BlogList from '../views/BlogList.vue'
 
 
 
@@ -29,6 +31,16 @@ const router = createRouter({
       path: '/products-list',
       name: 'ProductsList',
       component: ProductsList
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
+    {
+      path: '/blog-list',
+      name: 'BlogList',
+      component: BlogList
     },
    
   ]
