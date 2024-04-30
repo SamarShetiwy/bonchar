@@ -22,7 +22,7 @@
             
           <div class="flex items-center gap-x-2">
             <i class="pi pi-shopping-bag text-sm"></i> 
-            <p>0 items <span class="text-[#707070] ">$0.00</span>  </p>
+            <p> {{data?.countCartItems}}items <span class="text-[#707070] ">$0.00</span>  </p>
           </div>
           <i class="pi pi-search text-sm"></i> 
         </div>
@@ -39,12 +39,13 @@
     <HomeDropDown v-show="showDropdown" />
 
     <ul class="sm:flex gap-x-8 md:gap-x-11 w-full sm:w-auto hidden">
-      <li @click.prevent="toggleComponent" :class="{'text-[#33A0FF]': showDropdown }">HOME</li>    
-      <li>STORE</li>
-      <li>IPHONE</li>
-      <li>IPAD</li>
-      <li>MACBOOK</li>
-      <li>ACCESSORIES</li>
+    <router-link></router-link>
+    <router-link to="/"><li @click.prevent="toggleComponent" :class="{'text-[#33A0FF]': showDropdown }">HOME</li></router-link>   
+    <router-link><li>STORE</li></router-link>
+    <router-link><li>IPHONE</li></router-link>
+    <router-link><li>IPAD</li></router-link>
+    <router-link><li>MACBOOK</li></router-link>
+    <router-link><li>ACCESSORIES</li></router-link>
     </ul>
   </div>
 </nav>
@@ -54,10 +55,13 @@
 </template>
 
 <script setup>
-
-
 import { ref } from 'vue';
 import HomeDropDown from './HomeDropDown.vue';
+// import { useCartStore } from '../stores/cartStore.js';
+
+// const data = useCartStore();
+
+
 
 
 
@@ -69,7 +73,19 @@ const toggleComponent = ()=>{
   console.log(showDropdown.value);
 };
 
+
+
+
+
+
+
+
 </script>
+
+
+
+
+
 
 
   

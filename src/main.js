@@ -2,32 +2,14 @@ import './assets/main.scss'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-// import { ScriptCompileContext } from 'vue/compiler-sfc'
+import { createPinia } from 'pinia'
+
 
 const app = createApp(App)
+const pinia = createPinia()
 
-app.use(router)
+app.use(router);
+app.use(pinia);
 
 app.mount('#app');
 
-// const swiper = new Swiper('.swiper', {
-//     // Optional parameters
-//     direction: 'vertical',
-//     loop: true,
-  
-//     // If we need pagination
-//     pagination: {
-//       el: '.swiper-pagination',
-//     },
-  
-//     // Navigation arrows
-//     navigation: {
-//       nextEl: '.swiper-button-next',
-//       prevEl: '.swiper-button-prev',
-//     },
-  
-//     // And if we need scrollbar
-//     scrollbar: {
-//       el: '.swiper-scrollbar',
-//     },
-//   });

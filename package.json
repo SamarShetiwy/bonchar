@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,6 +10,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "pinia": "^2.1.7",
     "primeicons": "^7.0.0",
     "swiper": "^11.1.1",
     "vue": "^3.4.21",
