@@ -31,7 +31,7 @@
             </td>
             <td class="p-4 py-6">{{item.price}}</td>
             <td class="p-4 py-6">
-                <input type="number" placeholder="0" class="mt-4 bg-[#F6F7F8] w-[6rem] py-1 px-3 text-center outline-none">
+                <input type="number" placeholder="{{ item.quantity }}" class="mt-4 bg-[#F6F7F8] w-[6rem] py-1 px-3 text-center outline-none">
             </td>
             <td class="p-4 py-6">{{item.price}}</td>
         </tr>
@@ -80,9 +80,22 @@
 
 <script setup>
 
-// import { useCounterStore } from '@/stores/c'
-import { useCartStore } from '@/stores/cartStore'
+import { useCartStore } from '../stores/cartStore.js'
 const data = useCartStore();
+
+
+async function getCart(){
+  try {
+    const response = await fetch('https://fakestoreapi.com/carts/id');
+    const cart = await response.json();
+    cart.value = data;
+    console.log(cart.value);
+    console.log(cart.id);
+  } catch (error) {
+    console.error(error);
+  }
+}
+getCart()
 
 </script>
 

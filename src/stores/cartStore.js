@@ -13,6 +13,7 @@ export const  useCartStore = defineStore('cart', {
             image:'...'
         }, 
         ],
+        user: null,
         cartItems :[]
 
     }),
@@ -30,6 +31,10 @@ export const  useCartStore = defineStore('cart', {
           this.cartItems[index].quantity += 1;
         }
          
-      }
+      },
+
+      setUser(user) {
+        this.user = user;
+      },
     },
   })

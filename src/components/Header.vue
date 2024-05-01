@@ -22,7 +22,9 @@
             
           <div class="flex items-center gap-x-2">
             <i class="pi pi-shopping-bag text-sm"></i> 
-            <p> {{data?.countCartItems}}items <span class="text-[#707070] ">$0.00</span>  </p>
+           <router-link to="/cart">
+            <p> {{data.countCartItems}}items <span class="text-[#707070] ">$0.00</span>  </p>
+          </router-link>
           </div>
           <i class="pi pi-search text-sm"></i> 
         </div>
@@ -57,9 +59,9 @@
 <script setup>
 import { ref } from 'vue';
 import HomeDropDown from './HomeDropDown.vue';
-// import { useCartStore } from '../stores/cartStore.js';
+import { useCartStore } from '../stores/cartStore.js';
 
-// const data = useCartStore();
+const data = useCartStore();
 
 
 
