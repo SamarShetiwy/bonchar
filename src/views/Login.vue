@@ -82,6 +82,7 @@ try {
 
      const data = await response.json();
      localStorage.setItem('userData', JSON.stringify(data));
+     console.log('>>>>>>>>>>>>data', data);
      store.setUser(data);
      router.push('/');
 

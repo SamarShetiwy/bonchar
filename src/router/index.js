@@ -5,6 +5,8 @@ import HomeView from '../views/HomeView.vue'
 import ProductsList from '../views/ProductsList.vue'
 import Login from '../views/Login.vue'
 import BlogList from '../views/BlogList.vue'
+import BlogGrid from '../views/BlogGrid.vue'
+import BlogSingle from '../views/BlogSingle.vue'
 
 
 
@@ -41,6 +43,16 @@ const router = createRouter({
       path: '/blog-list',
       name: 'BlogList',
       component: BlogList
+    },
+    {
+      path: '/blog-grid',
+      name: 'BlogGrid',
+      component: BlogGrid
+    },
+    {
+      path: '/blog-single',
+      name: 'BlogSingle',
+      component: BlogSingle
     },
    
   ]
