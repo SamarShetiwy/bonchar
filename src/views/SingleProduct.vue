@@ -105,7 +105,7 @@
                       <div class="mt-4 border-t border-[#F6F7F8] flex justify-between items-center">
                           <input type="number" placeholder="0" class="mt-4 bg-[#F6F7F8] w-[6rem] py-1 px-3 text-center outline-none">
                           <div class="flex gap-x-5 mt-4">
-                              <button @click="data.addToCart(item)" class="bg-[#EBF6FF] text-[#33A0FF] h-fit px-8 py-1 rounded flex gap-x-4 items-center">
+                              <button @click="data.addToCart(productData)" class="bg-[#EBF6FF] text-[#33A0FF] h-fit px-8 py-1 rounded flex gap-x-4 items-center">
                                   <i class="pi pi-shopping-cart text-lg"></i>
                                   Add To Cart
                               </button>
@@ -180,6 +180,7 @@ import Swiper2 from '../components/swiperSingleProduct/swiper2.vue';
 // cart0
   import {useCartStore} from '../stores/cartStore.js'
   const data =useCartStore();
+
   console.log ('hhhhhhhhhhhhhhhhhhhhhhhh',data.products); 
 
 import ProductCard from '../components/ProductCard.vue';
@@ -213,6 +214,8 @@ onMounted(() => {
 
 });
 
+
+  
 </script>
 
 

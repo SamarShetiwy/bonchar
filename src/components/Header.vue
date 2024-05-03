@@ -42,8 +42,8 @@
 
     <ul class="sm:flex gap-x-8 md:gap-x-11 w-full sm:w-auto hidden">
     <router-link></router-link>
-    <router-link to="/"><li @click.prevent="toggleComponent" :class="{'text-[#33A0FF]': showDropdown }">HOME</li></router-link>   
-    <router-link><li>STORE</li></router-link>
+    <router-link to="/"><li >HOME</li></router-link>   
+    <router-link><li @click.prevent="toggleComponent" :class="{'text-[#33A0FF]': showDropdown }">STORE</li></router-link>
     <router-link><li>IPHONE</li></router-link>
     <router-link><li>IPAD</li></router-link>
     <router-link><li>MACBOOK</li></router-link>

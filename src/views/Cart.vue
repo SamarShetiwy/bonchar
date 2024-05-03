@@ -26,14 +26,14 @@
                 <div class="bg-[#FF6875]/20 rounded-full size-6 flex justify-center items-center">
                     <i class="pi pi-times text-xs text-[#FF4252]"></i>
                 </div>
-                <img :src="item.image" alt="">
-                <p>{{ item.title }}</p>
+                <img src="../assets/image/50061505_575246.png" alt="">
+                <p>{{ item.product.title }}</p>
             </td>
-            <td class="p-4 py-6">{{item.price}}</td>
+            <td class="p-4 py-6">{{ item.product.price }}6555kkk5</td>
             <td class="p-4 py-6">
-                <input type="number" placeholder="{{ item.quantity }}" class="mt-4 bg-[#F6F7F8] w-[6rem] py-1 px-3 text-center outline-none">
+                <input type="number" placeholder="{{ item.product.quantity }}" class="mt-4 bg-[#F6F7F8] w-[6rem] py-1 px-3 text-center outline-none">
             </td>
-            <td class="p-4 py-6">{{item.price}}</td>
+            <td class="p-4 py-6">{{item.price}}565565656</td>
         </tr>
       
 
@@ -73,56 +73,16 @@
 
 </div>
 
-<!-- <ul class="min-w-max"> -->
+
 
 
 </template>
 
 <script setup>
 
-import { useCartStore } from '../stores/cartStore.js';
-import { ref,onMounted } from 'vue';
+import { useCartStore } from'../stores/cartStore';
 
 const store = useCartStore();
-const cartItems = ref([]);
-const item = ref({});
-
-async function getCart() {
-    try {
-        const userId = store.user.id;
-        console.log(store.user.id);
-        const response = await fetch(`https://fakestoreapi.com/carts/${userId}`);
-        const cartData = await response.json();
-        console.log(cartData);
-        cartItems.value = cartData.cartItems;
-        item.value = cartItems.value; 
-    } catch (error) {
-        console.error(error);
-    }
-}
-getCart();
-
-const productData = ref({});
-
-async function getCartProduct(id) {
-  try {
-    const response = await fetch(`https://fakestoreapi.com/products/${id}`);
-    const data = await response.json();
-    productData.value = data;
-    console.log(data);
-   
-  } catch (error) {
-    console.error(error);
-  }
-}
-const userId = store.user.Id;
-onMounted(() => {
-
-    getCartProduct(userId);
-
-});
-
-
 
 
 </script>
