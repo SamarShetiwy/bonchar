@@ -2,18 +2,18 @@ import { defineStore } from "pinia";
 
 export const useCartStore = defineStore("cart", {
   state: () => ({
-    products:  JSON.parse(localStorage.getItem('cartProducts')) ?? [],
+    products:  [],
     user: null,
     token: null,
-    cartItems: [], // {productId : 33 , quantity : 0}
+    cartItems:  JSON.parse(localStorage.getItem('cartProducts'))  || [], // {productId : 33 , quantity : 0}
   }),
   getters: {
     countCartItems() {
       return this.cartItems.length;
     },
-    cartProducts() {
-      return this.cartItems.map(item => item.product);
-    }
+    // cartProducts() {
+    //   return this.cartItems.map(item => item.product);
+    // }
   },
   actions: {
     addToCart(item) {
@@ -27,6 +27,7 @@ export const useCartStore = defineStore("cart", {
       } else {
         this.cartItems.find(searchItem => searchItem.product.id == item.id).quantity += 1
       }
+      localStorage.setItem('cartProducts', JSON.stringify(this.cartItems));
     },
     async fetchCartData(userId) {
       const response = await fetch(`https://fakeapi.com/cart/${userId}`);

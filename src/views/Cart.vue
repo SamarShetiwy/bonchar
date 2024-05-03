@@ -21,19 +21,19 @@
     </thead>
 
     <tbody>
-        <tr v-for="item in store.cartItems" :key="item.productId">
+        <tr v-for="item in store.cartItems" :key="item.product.id">
             <td class="p-4 py-6 flex items-center gap-x-6 ">
                 <div class="bg-[#FF6875]/20 rounded-full size-6 flex justify-center items-center">
                     <i class="pi pi-times text-xs text-[#FF4252]"></i>
                 </div>
-                <img src="../assets/image/50061505_575246.png" alt="">
+                <img :src=" item.product.image" alt="">
                 <p>{{ item.product.title }}</p>
             </td>
-            <td class="p-4 py-6">{{ item.product.price }}6555kkk5</td>
+            <td class="p-4 py-6">{{ item.product.price }}</td>
             <td class="p-4 py-6">
-                <input type="number" placeholder="{{ item.product.quantity }}" class="mt-4 bg-[#F6F7F8] w-[6rem] py-1 px-3 text-center outline-none">
+                <input type="number"  :placeholder=" item.quantity " class="mt-4 bg-[#F6F7F8] w-[6rem] py-1 px-3 text-center outline-none">
             </td>
-            <td class="p-4 py-6">{{item.price}}565565656</td>
+            <td class="p-4 py-6">{{item.product.price}}</td>
         </tr>
       
 
