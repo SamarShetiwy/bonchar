@@ -177,7 +177,7 @@
         </div>
     </div>
 
-    <swiper2 :category= "productData?.category" />
+   <swiper2 v-if="productData.category" :category= "productData.category" />
 
 </template>
 

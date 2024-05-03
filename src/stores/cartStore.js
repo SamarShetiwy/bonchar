@@ -5,15 +5,13 @@ export const useCartStore = defineStore("cart", {
     products:  [],
     user: null,
     token: null,
-    cartItems:  JSON.parse(localStorage.getItem('cartProducts'))  || [], // {productId : 33 , quantity : 0}
+    cartItems:  JSON.parse(localStorage.getItem('cartProducts'))  || [], 
   }),
   getters: {
     countCartItems() {
       return this.cartItems.length;
     },
-    // cartProducts() {
-    //   return this.cartItems.map(item => item.product);
-    // }
+   
   },
   actions: {
     addToCart(item) {

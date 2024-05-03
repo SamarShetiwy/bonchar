@@ -9,7 +9,7 @@
     </div>
 </div>
 
-<div class="flex justify-center mt-10 overflow-x-scroll w-[80%] m-auto">
+<div class="flex justify-center mt-10  w-[80%] m-auto">
 <table class=" min-w-max">
     <thead>
         <tr class="border-b border-[#F1F3F4]">
@@ -20,13 +20,13 @@
         </tr>
     </thead>
 
-    <tbody>
+    <tbody class="grid-4">
         <tr v-for="item in store.cartItems" :key="item.product.id">
             <td class="p-4 py-6 flex items-center gap-x-6 ">
                 <div class="bg-[#FF6875]/20 rounded-full size-6 flex justify-center items-center">
                     <i class="pi pi-times text-xs text-[#FF4252]"></i>
                 </div>
-                <img :src=" item.product.image" alt="">
+                <img  class="w-[5rem]"   :src=" item.product.image" alt="">
                 <p>{{ item.product.title }}</p>
             </td>
             <td class="p-4 py-6">{{ item.product.price }}</td>
@@ -52,20 +52,20 @@
         <div class="flex flex-col gap-y-6 border-b border-[#F1F3F4] pb-4">
             <div class="flex justify-between gap-x-40">
                 <span>Subtotal</span>
-                <span>$999</span>
+                <span>${{ Subtotal }}</span>
             </div>
             <div class="flex justify-between gap-x-40">
                 <span>Shipping fee</span>
-                <span>$20</span>
+                <span>${{ shippingFee }}</span>
             </div>
             <div class="flex justify-between gap-x-40">
                 <span>Coupon</span>
-                <span>No</span>
+                <span>${{ Coupon }}</span>
             </div>
         </div>
         <div class="mt-6 flex justify-between font-semibold text-xl">
             <span>TOTAL</span>
-            <span>$118</span>
+            <span>${{ total }}</span>
         </div>
         <button class="bg-[#2E90E5] w-full mt-6 py-3 text-[#ffffff] rounded">Checkout</button>
     </div>
@@ -83,6 +83,13 @@
 import { useCartStore } from'../stores/cartStore';
 
 const store = useCartStore();
+
+const subtotal = store.cartItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
+const shippingFee = 20; 
+const coupon = 0; 
+
+
+const total = subtotal + shippingFee - coupon;
 
 
 </script>

@@ -16,9 +16,26 @@
         spaceBetween: 24,
       }
     }" class="mySwiper ">
-    <swiper-slide>
+    <swiper-slide class=" flex gap-11 my-7 mt-20" >
       <!-- <ProductCard :product="productData"/> -->
-      <ProductCard v-for="product in products" :key="product.id" :product="product" />
+      <!-- <ProductCard v-for="product in products" :key="product.id" :product="product" /> -->
+      <div v-for="product in products" :key="product.id" :product="product" class="container" >
+        <div class=" product border p-3 flex flex-col items-center gap-y-7">
+    <img class=" w-[20rem] h-60" :src="product?.image" />
+    <div class="flex flex-col items-center gap-y-3">
+      <h1>{{ product?.title }}</h1>
+      <div class="flex flex-col gap-y-2">
+        <img src="../../assets/image/rate.png" />
+        <div class="flex gap-x-3">
+          <span class="text-[#FF4858]">${{ product?.price }}</span>
+          <span class="text-[#5D656B] line-through">${{ product?.price }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+</div>
+
     </swiper-slide>
 
   </swiper>
@@ -39,10 +56,6 @@ const props = defineProps(['category']);
 
 const modules = [Pagination];
 const fetchData = async () => {
-  // const response = await fetch('https://fakestoreapi.com/products/categories');
-  // const categories = await response.json();
-  // const category = categories;
-  // console.log(category);
  console.log(props);
   const productsResponse = await fetch(`https://fakestoreapi.com/products/category/${props.category}`);
   const products = await productsResponse.json();

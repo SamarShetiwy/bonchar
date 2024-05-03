@@ -59,5 +59,8 @@ const router = createRouter({
 })
 
 export default router
-
-// slug
+// Reset scroll position before each navigation
+router.beforeEach((to, from, next) => {
+  window.scrollTo(0, 0); // Reset scroll position to top
+  next();
+});
