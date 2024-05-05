@@ -15,9 +15,9 @@ export const useCartStore = defineStore("cart", {
   },
   actions: {
     addToCart(item) {
-      let checkExist = this.cartItems.some(searchItem => searchItem.product.id === item.id);
+      let checkSearch = this.cartItems.some(searchItem => searchItem.product.id === item.id);
 
-      if (!checkExist) {
+      if (!checkSearch) {
         this.cartItems.push({
           product: item,
           quantity: 1
@@ -27,15 +27,19 @@ export const useCartStore = defineStore("cart", {
       }
       localStorage.setItem('cartProducts', JSON.stringify(this.cartItems));
     },
-    async fetchCartData(userId) {
-      const response = await fetch(`https://fakeapi.com/cart/${userId}`);
-      const data = await response.json();
-      localStorage.setItem('cartProducts', JSON.stringify(data.products));
-      this.products = data.products;
+      removeFromCart(productId) {
+       this.cartItems = this.cartItems.filter(item => item.product.id !== productId);
+       localStorage.setItem('cartProducts', JSON.stringify(this.cartItems));
     },
-    setUser(user, token) {
-      this.user = user;
-      this.token = token;
-    },
+    // async fetchCartData(userId) {
+    //   const response = await fetch(`https://fakeapi.com/cart/${userId}`);
+    //   const data = await response.json();
+    //   localStorage.setItem('cartProducts', JSON.stringify(data.products));
+    //   this.products = data.products;
+    // },
+    // setUser(user, token) {
+    //   this.user = user;
+    //   this.token = token;
+    // },
   },
 });

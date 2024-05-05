@@ -1,7 +1,7 @@
 <template>
   <router-link :to="`/product/${product.id}`">
-  <div class=" product border p-3 flex flex-col items-center gap-y-7">
-    <img class="h-40 w-full" :src="product?.image" />
+  <div class=" w-object-cover product border p-3 flex flex-col items-center gap-y-7">
+    <img class="h-full w-full" :src="product?.image" />
     <div class="flex flex-col items-center gap-y-3">
       <h1>{{ product?.title }}</h1>
       <div class="flex flex-col gap-y-2">
