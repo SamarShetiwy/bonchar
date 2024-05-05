@@ -2,25 +2,9 @@
 
 <template>
 
-  <Header/>
+ 
 
-  <!-- <div class="">
-
-    <div>
-      <h1>Newsletter</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-      <div class="flex px-4 h-fit">
-        <input class="w-[15rem] py-2 px-4 border" placeholder="Voucher code"/>
-        <button class="bg-[#2E90E5] text-[#ffffff] px-6">Redeem</button>
-      </div>
-      <div>
-        <input type="checkbox">
-        Don't show this popup again
-      </div>
-    </div>
-    <div></div>
-
-  </div> -->
+  <moduelHome/>
 
   <div class=" h-[30rem] bg-gradient-to-r from-[#8F65FF] to-[#FF4858] mt-10 flex flex-col justify-center items-center">
     <slider/>
@@ -204,6 +188,7 @@
 <script setup>
   
   import ProductCard from '../components/ProductCard.vue';
+  import moduelHome from '../components/moduelHome.vue'
   import slider from '../components/slider.vue';
   import { ref } from 'vue';
 

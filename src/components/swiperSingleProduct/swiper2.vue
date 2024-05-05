@@ -2,7 +2,9 @@
 
   <swiper :slidesPerView="1.7" :spaceBetween="50" :pagination="{
     clickable: true,
-  }" :modules="modules" :breakpoints="{
+  }" :modules="modules"
+     
+     :breakpoints="{
       '640': {
         slidesPerView: 2.5,
         spaceBetween: 16,
@@ -18,8 +20,8 @@
     }" class="mySwiper ">
     <swiper-slide class=" flex gap-11 my-7 mt-20" >
       <!-- <ProductCard :product="productData"/> -->
-      <!-- <ProductCard v-for="product in products" :key="product.id" :product="product" /> -->
-      <div v-for="product in products" :key="product.id" :product="product" class="container" >
+      <ProductCard v-for="product in products" :key="product.id" :product="product" />
+      <!-- <div v-for="product in products" :key="product.id" :product="product" class="container" > -->
         <div class=" product border p-3 flex flex-col items-center gap-y-7">
     <img class=" w-[20rem] h-60" :src="product?.image" />
     <div class="flex flex-col items-center gap-y-3">
@@ -34,7 +36,7 @@
     </div>
   </div>
     
-</div>
+<!-- </div> -->
 
     </swiper-slide>
 

@@ -10,16 +10,15 @@ import footar from './components/footar.vue';
 
 
 
-<template>
+<template >
+
  
-<!-- <div class="container"> -->
   <Header />
   
   <RouterView />
 
   <footar/>
 
-<!-- </div> -->
 </template>
 
 <style lang="scss">
