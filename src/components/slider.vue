@@ -6,7 +6,7 @@
                   <div class="text-start flex flex-col gap-y-6 text-[#FFFFFF] w-[35rem] z-10 px-5 xs:px-10 sm:px-20  py-5 lg:py-0 bg-zinc-800/60 lg:bg-transparent rounded">
                     <h1 class="text-3xl font-semibold text-shadow-2xl">iPhone x</h1>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-                    <button class="text-start border-b-2 w-fit pb-2">More</button>
+                    <button class="text-start border-b-2 w-fit pb-2 hover:transform hover:scale-105">More</button>
                   </div>
 
                   <img class="max-w-fit lg:static absolute" src="../assets/image/iphonex_spacegray.png" alt="">
@@ -22,10 +22,8 @@
 <script setup>
 
   import { Swiper, SwiperSlide } from 'swiper/vue';
-  import 'swiper/css/navigation';
-  
+  // import 'swiper/css/navigation';
   import { Navigation,Thumbs } from 'swiper/modules';
-// Import Swiper styles
 
 
   const  modules = [Navigation, Thumbs];
@@ -45,7 +43,6 @@
     background: linear-gradient(90deg, rgba(143,101,255,1) 0%, rgba(255,72,88,1) 100%);
 
   
-    /* Center slide text vertically */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,11 +54,14 @@
     height: 100%;
     object-fit: cover;
   }
-
-  /* .swiper-button-next{
-    position: absolute;
-    right: 5rem !important;
-  } */
-  
+  .swiper-button-prev:after, .swiper-button-next:after {
+    font-family: swiper-icons;
+    font-size: x-large;
+    text-transform: none !important;
+    letter-spacing: 0;
+    font-variant: initial;
+    line-height: 1;
+    color: black;
+}
 
 </style>

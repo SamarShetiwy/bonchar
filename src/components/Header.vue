@@ -41,13 +41,12 @@
     <HomeDropDown v-show="showDropdown" />
 
     <ul class="sm:flex gap-x-8 md:gap-x-11 w-full sm:w-auto hidden">
-    <router-link></router-link>
-    <router-link to="/"><li >HOME</li></router-link>   
-    <router-link to="#"><li @click.prevent="toggleComponent" :class="{'text-[#33A0FF]': showDropdown }">STORE</li></router-link>
-    <router-link to="#"><li>IPHONE</li></router-link>
-    <router-link to="#"><li>IPAD</li></router-link>
-    <router-link to="#"><li>MACBOOK</li></router-link>
-    <router-link to="#"><li>ACCESSORIES</li></router-link>
+    <router-link to="/"><li class="hover:transform hover:scale-105  hover:text-[#33A0FF]" >HOME</li></router-link>   
+    <router-link to="#"><li class="hover:transform hover:scale-105  hover:text-[#33A0FF]" @click.prevent="toggleComponent" :class="{'text-[#33A0FF]': showDropdown }">STORE</li></router-link>
+    <router-link to="#"><li class="hover:transform hover:scale-105  hover:text-[#33A0FF]">IPHONE</li></router-link>
+    <router-link to="#"><li class="hover:transform hover:scale-105  hover:text-[#33A0FF]">IPAD</li></router-link>
+    <router-link to="#"><li class="hover:transform hover:scale-105  hover:text-[#33A0FF]">MACBOOK</li></router-link>
+    <router-link to="#"><li class="hover:transform hover:scale-105  hover:text-[#33A0FF]">ACCESSORIES</li></router-link>
     </ul>
   </div>
 </nav>

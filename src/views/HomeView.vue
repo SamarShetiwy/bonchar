@@ -55,12 +55,13 @@
   <div class="flex flex-col container justify-center w-[54rem] items-center">
     <h1 class="text-xl font-semibold">BEST SELLERS</h1>
     <ul class="flex flex-wrap justify-center gap-x-8 mt-4">
-      <li>All</li>
-      <li>Mac</li>
-      <li>iPhone</li>
-      <li>iPad</li>
-      <li>iPad</li>
-      <li>Accessories</li>
+      <li class="hover:transform hover:scale-105 hover:text-[#33A0FF] {
+">All</li>
+      <li class="hover:transform hover:scale-105  hover:text-[#33A0FF]">Mac</li>
+      <li class="hover:transform hover:scale-105  hover:text-[#33A0FF]">iPhone</li>
+      <li class="hover:transform hover:scale-105  hover:text-[#33A0FF]">iPad</li>
+      <li class="hover:transform hover:scale-105  hover:text-[#33A0FF]">iPad</li>
+      <li class="hover:transform hover:scale-105  hover:text-[#33A0FF]">Accessories</li>
     </ul>
 
   <div id="products-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-7">
@@ -68,7 +69,7 @@
   <ProductCard v-for="product in products" :key="product.id" :product="product" />
 
 </div>
-    <a  class="text-xl font-semibold mt-20 flex justify-center text-[#33A0FF]  uppercase underline  " href="">load more</a>
+    <a  class="text-xl font-semibold mt-20 flex justify-center text-[#33A0FF]  uppercase underline hover:transform hover:scale-105" href="">load more</a>
   </div>
   
 </div>
@@ -108,7 +109,7 @@
   <h1 class="text-2xl font-semibold">LATEST NEWS</h1>
   <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 lg:container lg:w-[65rem] w-full gap-x-6 px-12 sm:gap-y-4 gap-y-12 mt-12">
 
-    <div class="flex gap-x-3 h-36">
+    <div class="flex gap-x-3 h-36 hover:transform hover:scale-105">
       <img src="../assets/image/Rectangle 1 copy 25.png"/>
       <div class="flex flex-col justify-center">
         <span class="text-[#C1C8CE]">01 Jan, 2015</span>
@@ -116,7 +117,7 @@
         <p>lorem lorem lorem lorem lorem lorem lorem lorem lorem </p>
       </div>
     </div>
-    <div class="flex gap-x-3 h-36">
+    <div class="flex gap-x-3 h-36 hover:transform hover:scale-105">
       <img src="../assets/image/Rectangle 1 copy 26.png"/>
       <div class="flex flex-col justify-center">
         <span class="text-[#C1C8CE]">01 Jan, 2015</span>
@@ -124,7 +125,7 @@
         <p>lorem lorem lorem lorem lorem lorem lorem lorem lorem </p>
       </div>
     </div>
-    <div class="flex gap-x-3 h-36">
+    <div class="flex gap-x-3 h-36 hover:transform hover:scale-105">
       <img src="../assets/image/Rectangle 1 copy 27.png"/>
       <div class="flex flex-col justify-center">
         <span class="text-[#C1C8CE]">01 Jan, 2015</span>
@@ -140,7 +141,7 @@
   <h1 class="text-2xl font-semibold">FEATURED PRODUCTS</h1>
   <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 lg:container lg:w-[65rem] w-full gap-x-6 px-12 sm:gap-y-4 gap-y-12 mt-12">
 
-    <div class="flex gap-x-3 h-36">
+    <div class="flex gap-x-3 h-36 hover:transform hover:scale-105">
       <img class="w-32 object-cover" src="../assets/image/c04297141.png"/>
       <div class="flex flex-col justify-center gap-y-2">
         <p>lorem lorem lorem lorem lorem lorem lorem lorem lorem </p>
@@ -151,7 +152,7 @@
         </div>
       </div>
     </div>
-    <div class="flex gap-x-3 h-36">
+    <div class="flex gap-x-3 h-36 hover:transform hover:scale-105">
       <img class="w-32 object-cover" src="../assets/image/PR-104-0015-002-8A.png"/>
       <div class="flex flex-col justify-center gap-y-2">
         <p>lorem lorem lorem lorem lorem lorem lorem lorem lorem </p>
@@ -162,7 +163,7 @@
         </div>
       </div>
     </div>
-    <div class="flex gap-x-3 h-36">
+    <div class="flex gap-x-3 h-36 hover:transform hover:scale-105">
       <img class="w-32 object-cover" src="../assets/image/50050995_530579.png"/>
       <div class="flex flex-col justify-center gap-y-2">
         <p>lorem lorem lorem lorem lorem lorem lorem lorem lorem </p>
@@ -177,7 +178,7 @@
   </div>
 </div>
 
-<div class="mt-32 flex justify-center px-4">
+<div class="mt-32 flex justify-center px-4 hover:transform hover:scale-105">
   <input class="w-[25rem] py-2 px-4 border" placeholder="Search query..."/>
   <button class="bg-[#2E90E5] text-[#ffffff] px-6">Search</button>
 </div>

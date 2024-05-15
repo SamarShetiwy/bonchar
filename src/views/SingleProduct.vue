@@ -1,5 +1,5 @@
 <template>
-    <Header />
+  
 
     <div class="flex justify-center bg-[#F6F7F8] mt-8 py-3 px-4">
         <div class="text-[#C1C8CE]">
@@ -106,23 +106,23 @@
                             <input type="number" placeholder="0"
                                 class="mt-4 bg-[#F6F7F8] w-[6rem] py-1 px-3 text-center outline-none">
                             <div class="flex gap-x-5 mt-4">
-                                <button @click="data.addToCart(productData)"
-                                    class="bg-[#EBF6FF] text-[#33A0FF] h-fit px-8 py-1 rounded flex gap-x-4 items-center">
+                                <button @click="data.addToCart(productData) "
+                                    class="bg-[#EBF6FF] text-[#33A0FF] h-fit px-8 py-1 rounded flex gap-x-4 items-center hover:transform hover:scale-105">
                                     <i class="pi pi-shopping-cart text-lg"></i>
                                     Add To Cart
                                 </button>
-                                <button class="bg-[#EBF6FF] text-[#33A0FF] h-fit px-3 py-1 rounded">
+                                <button class="bg-[#EBF6FF] text-[#33A0FF] h-fit px-3 py-1 rounded hover:transform hover:scale-105">
                                     <i class="pi pi-heart text-lg"></i>
                                 </button>
                             </div>
                         </div>
 
                         <div class="text-[#FFFFFF] mt-4 border-t border-[#F6F7F8] flex gap-x-4 pt-5">
-                            <button class="bg-[#385C8E] w-1/2 px-6 py-2 rounded flex items-center gap-x-3">
+                            <button class="bg-[#385C8E] w-1/2 px-6 py-2 rounded flex items-center gap-x-3 hover:transform hover:scale-105">
                                 <i class="pi pi-facebook text-lg"></i>
                                 Share on Facebook
                             </button>
-                            <button class="bg-[#03A9F4] w-1/2 px-6 py-2 rounded flex items-center gap-x-3">
+                            <button class="bg-[#03A9F4] w-1/2 px-6 py-2 rounded flex items-center gap-x-3 hover:transform hover:scale-105">
                                 <i class="pi pi-twitter text-lg"></i>
                                 Share on Twitter
                             </button>
@@ -137,12 +137,12 @@
             <!-- Reviews -->
             <div class="bg-[#FAFAFB] mt-10 p-6">
                 <div class="flex gap-x-10 font-semibold border-b-2 border-[#E5E8EA] ">
-                    <button class="text-[#2E90E5] border-b-4 border-[#2E90E5] pb-5">Product Information</button>
+                    <button class="text-[#2E90E5] border-b-4 border-[#2E90E5] pb-5 hover:transform hover:scale-105">Product Information</button>
                     <button class="pb-5">
                         Reviews
                         <span>0</span>
                     </button>
-                    <button class="pb-5">Another tab</button>
+                    <button class="pb-5 hover:transform hover:scale-105">Another tab</button>
                 </div>
                 <p class="mt-8">
                     Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut
@@ -165,8 +165,9 @@
 
             <h1>Best Sellers</h1>
 
-            <ProductCard :product="productData" />
-
+           <div>
+              <ProductCard :product="productData" />
+           </div>
             <div class="mt-10 bg-[#C1C8CE] px-5 py-8 flex flex-col gap-y-5">
                 <h1 class="text-xl font-bold">Go Pro Hero 6</h1>
                 <p class="text-sm">Lorem Ipsum dolor sit amet, consectetur adipiscing elit, labor</p>
@@ -176,8 +177,10 @@
 
         </div>
     </div>
+   <div class="container gap-x-14 flex justify-center items-center">
+    <swiper2 v-if="productData.category" :category= "productData.category" />
 
-   <swiper2 v-if="productData.category" :category= "productData.category" />
+   </div>
 
 </template>
 

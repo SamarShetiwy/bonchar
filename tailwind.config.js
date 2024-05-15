@@ -19,7 +19,16 @@ export default {
           '2xl': '1536px',
           '3xl': '1700px',
       },
+        
   },
+  'button:hover': {
+
+    transition: 'transform 0.2s ease-out',
+
+    transform: 'scale(1.05)',
+
+  },
+
   plugins: [
     function({ addUtilities }) {
       const newUtilities = {
@@ -28,6 +37,7 @@ export default {
         },
       };
       addUtilities(newUtilities, ['responsive', 'hover']);
+      
     },
   ],
 }

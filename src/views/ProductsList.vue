@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-center bg-[#F6F7F8] mt-8 py-3 px-4">
+    <div class="flex justify-center bg-[#F6F7F8] mt-8 py-3 px-4 ">
         <div class="text-[#C1C8CE]">
             <span class="text-[#33A0FF] mx-2">Home </span>
             /

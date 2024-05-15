@@ -3,6 +3,7 @@
   <swiper :slidesPerView="1.7" :spaceBetween="50" :pagination="{
     clickable: true,
   }" :modules="modules"
+    
      
      :breakpoints="{
       '640': {
