@@ -189,7 +189,7 @@
 <script setup>
   
   import ProductCard from '../components/ProductCard.vue';
-  import moduelHome from '../components/moduelHome.vue'
+  import moduelHome from '../components/moduelHome.vue';
   import slider from '../components/slider.vue';
   import { ref } from 'vue';
 
