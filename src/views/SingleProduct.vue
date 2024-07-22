@@ -197,7 +197,7 @@ const data = useCartStore();
 // console.log('hhhhhhhhhhhhhhhhhhhhhhhh', data.products);
 
 import ProductCard from '../components/ProductCard.vue';
-import { useRoute } from 'vue-router'
+import { useRoute } from 'vue-router';
 import { ref, onMounted } from 'vue';
 
 

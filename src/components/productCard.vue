@@ -26,7 +26,6 @@ const props = defineProps({
   product: {
     type: Object,
     default: [{}]
-     
   }
 });
 
