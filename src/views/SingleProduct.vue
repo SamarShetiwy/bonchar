@@ -166,7 +166,7 @@
             <h1>Best Sellers</h1>
 
            <div>
-              <ProductCard :product="productData" />
+                <!-- <ProductCard :product="productData" /> -->
            </div>
             <div class="mt-10 bg-[#C1C8CE] px-5 py-8 flex flex-col gap-y-5">
                 <h1 class="text-xl font-bold">Go Pro Hero 6</h1>
@@ -196,7 +196,7 @@ const data = useCartStore();
 
 // console.log('hhhhhhhhhhhhhhhhhhhhhhhh', data.products);
 
-import ProductCard from '../components/ProductCard.vue';
+// import ProductCard from '../components/ProductCard.vue';
 import { useRoute } from 'vue-router';
 import { ref, onMounted } from 'vue';
 
