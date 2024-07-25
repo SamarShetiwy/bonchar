@@ -191,12 +191,12 @@ import Swiper1 from '../components/swiperSingleProduct/swiper1.vue';
 import Swiper2 from '../components/swiperSingleProduct/swiper2.vue';
 
 // cart0
-import { useCartStore } from '../stores/cartStore.js'
+import { useCartStore } from '../stores/cartStore.js';
 const data = useCartStore();
 
 // console.log('hhhhhhhhhhhhhhhhhhhhhhhh', data.products);
 
-// import ProductCard from '../components/ProductCard.vue';
+import ProductCard from '../components/ProductCard.vue';
 import { useRoute } from 'vue-router';
 import { ref, onMounted } from 'vue';
 
